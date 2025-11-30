@@ -14,7 +14,7 @@ The following maps the method names used in code to the ones used in the paper :
 - `online_1` means `SWCW` (with the one-hot variant denoted analogously)
 - `arwc_normalized` means `original`
 
-The jupyter notebook vdw_vaw_swcw_mrpo_mdpo.ipynb implements the methods `VDW`, `VAW` and `SWCW` for computing the mixture weights alphas, for both losses `MRPO` and `MDPO`. It works for both datasets `SafeRLHF` and `Ultra-FeedBack` across the different seeds. 
+The Jupyter Notebook vdw_vaw_swcw_mrpo_mdpo.ipynb implements the methods `VDW`, `VAW` and `SWCW` for computing the mixture weights alphas, for both losses `MRPO` and `MDPO`. It works for both datasets `SafeRLHF` and `Ultra-FeedBack` across the different seeds. 
 In the first cell of the notebook, users should select the desired configuration by setting:
 - `DATASET` to one of: `"ultrafeedback_binarized"` or `"PKU-SafeRLHF-30K-standard"`
 - `SEED` to any seed in `[0, 1, 2, 3, 4]`
@@ -22,20 +22,20 @@ In the first cell of the notebook, users should select the desired configuration
 - `ALPHA_METHOD` to one of: `["offline_1", "offline_2", "online_1", "arwc_normalized"]`
 Once these values are chosen, simply run the notebook **end-to-end without modification** to reproduce our results. 
 
-The jupyter notebook `data_process.ipynb` loads preference datasets, computes token lengths using the seven reference tokenizers, processes the data using a worst-case on token length, then saves the processed data into train-valid-test splits for later use. 
+The Jupyter Notebook `data_process.ipynb` loads preference datasets, computes token lengths using the seven reference tokenizers, processes the data using a worst-case on token length, then saves the processed data into train-valid-test splits for later use. 
 
-The jupyter notebook `precomputing_reference_log_probs.ipynb` loads pre-trained language models and reference tokenizers, computes log probabilities and token lengths for all reference models on the preference datasets and saves the results for later use.
+The Jupyter Notebook `precomputing_reference_log_probs.ipynb` loads pre-trained language models and reference tokenizers, computes log probabilities and token lengths for all reference models on the preference datasets and saves the results for later use.
 
-The jupyter notebook `splitting_over_multiple_seeds.ipynb` first combines all splits per dataset (preference datasets + precomputed reference log probabilities), then per seed shuffles the whole data and creates new train-val-test splits and finally saves the new splits for experiments.
+The Jupyter Notebook `splitting_over_multiple_seeds.ipynb` first combines all splits per dataset (preference datasets + precomputed reference log probabilities), then per seed shuffles the whole data and creates new train-val-test splits and finally saves the new splits for experiments.
 
-The jupyter notebook `baseline_dpo.ipynb` implements the 7 baseline DPO finetuning experiments using Qwen_Qwen2.5-0.5B-Instruct as base model and each of the 7 reference models.
-The jupyter notebook `tsw.ipynb` implements the Thompson Sampling online method for computing the alpha weights during finetuning.
+The Jupyter Notebook `baseline_dpo.ipynb` implements the 7 baseline DPO finetuning experiments using Qwen_Qwen2.5-0.5B-Instruct as base model and each of the 7 reference models.
+The Jupyter Notebook `tsw.ipynb` implements the Thompson Sampling online method for computing the alpha weights during finetuning.
 
-The jupyter notebook `swcw_one_hot.ipynb` implements the SWCW one-hot method for computing the alpha weights during finetuning. 
+The Jupyter Notebook `swcw_one_hot.ipynb` implements the SWCW one-hot method for computing the alpha weights during finetuning. 
 
-The jupyter notebook `analyzer.ipynb` combines all logs from all experiments, normalizes the names and saves summary files per method.
+The Jupyter Notebook `analyzer.ipynb` combines all logs from all experiments, normalizes the names and saves summary files per method.
 
-The jupyter notebook `visualizer.ipynb` loads the summary files and produces the plots in the paper. 
+The Jupyter Notebook `visualizer.ipynb` loads the summary files and produces the plots in the paper. 
 
 The file `helpers.py` contains helper functions used across multiple notebooks, including mdpo, mrpo, log probability computations of the reply given the prompt for the finetuned model, etc. 
 
