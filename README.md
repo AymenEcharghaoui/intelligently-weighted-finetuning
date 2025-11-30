@@ -11,7 +11,7 @@ We consider these settings to be the minimum requirements for running our experi
 The following maps the method names used in code to the ones used in the paper : 
 - `offline_1` means `VDW`
 - `offline_2` means `VAW`
-- `online_1` means `SWCW`
+- `online_1` means `SWCW` (with the one-hot variant denoted analogously)
 - `arwc_normalized` means `original`
 
 The jupyter notebook vdw_vaw_swcw_mrpo_mdpo.ipynb implements the methods `VDW`, `VAW` and `SWCW` for computing the mixture weights alphas, for both losses `MRPO` and `MDPO`. It works for both datasets `SafeRLHF` and `Ultra-FeedBack` across the different seeds. 
@@ -38,6 +38,7 @@ The jupyter notebook `analyzer.ipynb` combines all logs from all experiments, no
 The jupyter notebook `visualizer.ipynb` loads the summary files and produces the plots in the paper. 
 
 The file `helpers.py` contains helper functions used across multiple notebooks, including mdpo, mrpo, log probability computations of the reply given the prompt for the finetuned model, etc. 
+
 The compressed folder `cleaned_results.zip` contains all the summary files produced by `analyzer.ipynb` for all methods, datasets and seeds.
 
 The compressed folder `raw_results.zip` contains all the raw logs produced during finetuning, normalized into one naming convention by `analyzer.ipynb`.
