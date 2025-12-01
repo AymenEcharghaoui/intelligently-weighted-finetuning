@@ -1,6 +1,8 @@
 # Intelligently Reweighting Multiple Reference Models for Direct Preference Optimization of LLMs.
 
-This repository accompanies the paper "Intelligently Reweighting Multiple Reference Models for Direct Preference Optimization of LLMs," written by Skyler Wu and Aymen Echarghaoui and submitted as a final course project to Stanford University's [CS 329H: Machine Learning from Human Preferences](https://web.stanford.edu/class/cs329h/) course, taught by Professor Sanmi Koyejo and Dr. Andy Haupt.
+*Ethical Statement: LLM fine-tuning is a powerful tool that can be used for both good and malicious intentions. Please use these methods to advance humanity.*
+
+This repository accompanies the paper "Intelligently Reweighting Multiple Reference Models for Direct Preference Optimization of LLMs," written by Skyler Wu and Aymen Echarghaoui.
 
 **Environment Setup and Dependencies + Expected Runtime and Computational Requirements:** all experiments were run on Google Colab Pro+ using single NVIDIA A100 High-RAM instances with 80 GB of GPU memory each. The only additional packages the Colab user needs to install can be done via the following: `! pip install bitsandbytes==0.46.0 accelerate==1.7.0`. If the reader is interested in running our code locally, they can install all requirements via `pip install -r requirements.txt`.
 
